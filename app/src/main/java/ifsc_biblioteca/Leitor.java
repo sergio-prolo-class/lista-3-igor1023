@@ -20,11 +20,43 @@ public class Leitor{
     public Leitor(String nome, String endereco, String telefone){
 
         this.nome = nome;
-        this.nome = endereco;
+        this.endereco = endereco;
         this.telefone = telefone;
-        this.id = String.format("%4d", idAtual + 1);
+        this.id = String.format("%04d", idAtual + 1);
         
         idAtual++; //para o proximo leitor
+
+    }
+
+    public String getNome(){
+
+        return this.nome;
+
+    }
+
+    public String getEndereco(){
+
+        return this.endereco;
+
+    }
+
+    public String getTelefone(){
+
+        return this.telefone;
+
+    }
+
+    public String getId(){
+
+        return this.id;
+
+    }
+
+    public String exibirDados(){
+
+        return 
+            "Nome: " + getNome() + "; Endereço: " + getEndereco() + 
+            "; Telefone: " + getTelefone() + "; ID: " + getId();
 
     }
 
