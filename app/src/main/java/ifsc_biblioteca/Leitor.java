@@ -2,6 +2,9 @@ package ifsc_biblioteca;
 
 public class Leitor{
 
+    // constantes
+    private final int MAX_EMPRESTIMOS = 5;
+
     // Atributos
     private String nome;
     private String endereco;
@@ -24,8 +27,8 @@ public class Leitor{
         this.endereco = endereco;
         this.telefone = telefone;
         this.id = String.format("%04d", idAtual + 1);
-        
-        quantidadeEmprestimos = 0;
+        this.quantidadeEmprestimos = 0;
+
         idAtual++; //para o proximo leitor
 
     }
@@ -53,6 +56,32 @@ public class Leitor{
         return this.id;
 
     }
+
+    public void incrementarEmprestimos() {
+        
+        this.quantidadeEmprestimos++;
+
+    }
+    
+    public void decrementarEmprestimos() {
+
+        if (this.quantidadeEmprestimos > 0)
+            this.quantidadeEmprestimos--;
+
+    }
+    
+    public int getQuantidadeEmprestimos() {
+       
+        return this.quantidadeEmprestimos;
+
+    }
+
+    public boolean podeEmprestar() {
+
+        return this.quantidadeEmprestimos < MAX_EMPRESTIMOS;
+
+    }
+    
 
     public String exibirDados(){
 

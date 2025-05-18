@@ -2,6 +2,7 @@ package ifsc_biblioteca;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -11,6 +12,15 @@ public class Biblioteca{
     private Set<Livro> livros;
     private Set<Leitor> leitores;
     private Set<Emprestimo> emprestimos;
+
+    public Biblioteca(){
+
+        this.autores = new LinkedHashSet<>();
+        this.livros = new LinkedHashSet<>();
+        this.leitores = new LinkedHashSet<>();
+        this.emprestimos = new LinkedHashSet<>();
+
+    }
 
     public void cadastrarAutor(Autor autor){
 
@@ -35,9 +45,16 @@ public class Biblioteca{
         if(! livro.existeCopiaParaEmprestimo())
             return false;
 
-        livro.emprestar();
-        Emprestimo emp = new Emprestimo(livro, leitor, data);
-        this.emprestimos.add(emp);
+        if(! leitor.podeEmprestar())
+            return false;
+
+        if(livro.emprestar()) {
+            leitor.incrementarEmprestimos();
+            Emprestimo emp = new Emprestimo(livro, leitor, data);
+            this.emprestimos.add(emp);
+            return true;
+        }
+        
         return true;
 
     }

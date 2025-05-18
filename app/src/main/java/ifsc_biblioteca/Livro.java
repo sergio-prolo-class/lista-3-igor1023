@@ -15,13 +15,13 @@ public class Livro{
 
 
     // Atributo da classe
-    private static int codigoAtual = 1000;
+    private static int codigoAtual = 1001;
 
     public Livro(String titulo, Set<Autor> autores, int totalCopias){
 
         this.titulo = titulo;
         this.autores = autores;
-        this.codigo = (codigoAtual + 1) + "";
+        this.codigo = codigoAtual + "";
         this.totalCopias = this.copiasDisponiveis = totalCopias;
         this.totalEmprestimos = 0;
 
@@ -102,7 +102,6 @@ public class Livro{
 
     public void devolver(){
 
-        this.totalEmprestimos--;
         this.copiasDisponiveis++;
 
     }

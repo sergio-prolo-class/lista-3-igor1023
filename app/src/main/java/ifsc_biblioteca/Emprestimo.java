@@ -2,6 +2,8 @@ package ifsc_biblioteca;
 
 public class Emprestimo{
 
+    // constantes
+    private final int MAX_EMPRESTIMOS = 5;
     // Atributos (referencias)
     private Livro livro;
     private Leitor leitor;
@@ -12,6 +14,7 @@ public class Emprestimo{
         this.livro = livro;
         this.leitor = leitor;
         this.dataEmprestimo = data;
+        this.livro.emprestar();
 
     }
 

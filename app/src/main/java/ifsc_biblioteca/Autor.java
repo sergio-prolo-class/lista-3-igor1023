@@ -1,14 +1,13 @@
 package ifsc_biblioteca;
 
 import java.util.Set;
-import java.util.LinkedHashSet;
 
 public class Autor{
 
     // Atributos
     private String nome;
     private String idioma;
-    private Set<Livro> livros = new LinkedHashSet<Livro>();
+    private Set<Livro> livros;
 
     public Autor(String nome, String idioma, Set<Livro> livros){
 
