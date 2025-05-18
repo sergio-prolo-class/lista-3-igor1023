@@ -7,6 +7,7 @@ public class Leitor{
     private String endereco;
     private String telefone;
     private String id;
+    private int quantidadeEmprestimos;
 
     // Atributo da classe
     private static int idAtual = 0;
@@ -24,6 +25,7 @@ public class Leitor{
         this.telefone = telefone;
         this.id = String.format("%04d", idAtual + 1);
         
+        quantidadeEmprestimos = 0;
         idAtual++; //para o proximo leitor
 
     }

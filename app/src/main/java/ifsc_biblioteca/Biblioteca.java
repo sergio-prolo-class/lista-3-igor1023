@@ -1,5 +1,8 @@
 package ifsc_biblioteca;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 public class Biblioteca{
@@ -8,8 +11,6 @@ public class Biblioteca{
     private Set<Livro> livros;
     private Set<Leitor> leitores;
     private Set<Emprestimo> emprestimos;
-
-
 
     public void cadastrarAutor(Autor autor){
 
@@ -41,16 +42,126 @@ public class Biblioteca{
 
     }
 
-    /*
-     * para depois...
-     *  public void listarAutoresOrdemAlfabetica();
-        public void listarLeitoresPorNome();
-        public void listarLeitoresPorId();
-        public void listarLivrosPorTitulo();
-        public void listarLivrosPorAutor();
-        public void listarLivrosPorCodigo();
-        public void listarEmprestimosPorData();
-        public void listarEmprestimosPorLeitor(Leitor leitor);
-     */
+    // Conheci o método sort da classe Collections
+    // https://www.youtube.com/watch?v=wViUmn3YFoE
+    public String listarAutoresOrdemAlfabetica(){
+
+        String autores = "{ ";
+        List<String> autoresNomes = new ArrayList<String>();
+
+
+        for(Autor autor : this.autores){
+            autoresNomes.add(autor.getNome());
+        }
+
+        Collections.sort(autoresNomes);
+
+        for(String str : autoresNomes){
+            autores += str + "; ";
+        }
+
+        autores += " }";
+
+        return autores;
+    }
+
+    // mesma ideia dos autores em ordem alfabetica foi
+    // aplicada nos métodos abaixo
+
+    public String listarLeitoresPorNome(){
+
+        String leitores = "{ ";
+        List<String> leitoresNomes = new ArrayList<String>();
+
+        for(Leitor leitor : this.leitores){
+            leitoresNomes.add(leitor.getNome());
+        }
+
+        Collections.sort(leitoresNomes);
+
+        for(String str : leitoresNomes){
+            leitores += str + "; ";
+        }
+
+        leitores += "}";
+        return leitores;
+
+    }
+
+    public String listarLeitoresPorId(){
+
+        String ids = "{ ";
+
+        List<String> idsLeitores = new ArrayList<String>();
+
+        for(Leitor leitorId : this.leitores){
+            idsLeitores.add(leitorId.getId());
+        }
+
+        Collections.sort(idsLeitores);
+
+        for(String str : idsLeitores){
+            ids += str + "; ";
+        }
+
+        ids += " }";
+        return ids;
+
+    }
+
+    public String listarLivrosPorTitulo(){
+
+        String livros = "{ ";
+
+        List<String> livrosNomes = new ArrayList<String>();
+
+        for(Livro livro : this.livros){
+            livrosNomes.add(livro.getTitulo());
+        }
+
+        Collections.sort(livrosNomes);
+
+        for(String str : livrosNomes){
+            livros += str + "; ";
+        }
+
+        livros += " }";
+        return livros;
+
+    }
+
+    public void listarLivrosPorAutor(){
+
+    }
+
+    public void listarLivrosPorCodigo(){
+
+        String codigos = "{ ";
+
+        List<String> livrosCodigos = new ArrayList<String>();
+
+        for(Livro livro : this.livros){
+            livrosCodigos.add(livro.getCodigo());
+        }
+
+        Collections.sort(livrosCodigos);
+
+        for(String str : livrosCodigos){
+            codigos += str + "; ";
+        }
+
+        codigos += " }";
+        return codigos;
+
+
+    }
+
+    public void listarEmprestimosPorData(){
+
+    }
+
+    public void listarEmprestimosPorLeitor(Leitor leitor){
+
+    }
 
 }
