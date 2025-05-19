@@ -56,9 +56,9 @@ Requisitos funcionais:
 
 • Gerar relatório estatístico contendo:
 
---Total de solicitações registradas, atendidas e em espera.
+-- Total de solicitações registradas, atendidas e em espera.
 
---Distribuição percentual das solicitações por categoria
+-- Distribuição percentual das solicitações por categoria
 
 ### Questão 3 - Biblioteca de Livros
 Uma pequena biblioteca comunitária deseja informatizar o controle do acervo e dos empréstimos. A
