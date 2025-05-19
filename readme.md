@@ -21,10 +21,15 @@ um login único e uma senha. Os logins devem ser tratados de forma insensível a
 usuários em uma estrutura de dados única e estática, dispensando a criação de instâncias. Para isso, deve
 ser utilizada uma classe utilitária, com todos os dados e métodos implementados como membros static.
 
+
 Requisitos funcionais:
+
 • Cadastrar novos usuários a partir de login e senha, garantindo que logins não se repitam.
+
 • Remover usuários com base em seu login.
+
 • Listar os logins de todos os usuários cadastrados, preservando a ordem de cadastro.
+
 • Autenticar usuários, verificando se login e senha correspondem a um usuário existente.
 
 ### Questão 2 - Fila de Atendimento
@@ -34,16 +39,25 @@ mesmo cliente pode realizar múltiplas solicitações. Cada solicitação inclui
 uma categoria, que deve ser uma das seguintes: “Suporte Técnico”, “Informação” ou “Atendimento
 Financeiro”.
 
+
 Requisitos funcionais:
+
 • Registrar novas solicitações de atendimento, vinculadas ao nome e telefone do cliente.
+
 • Listar os telefones de todos os clientes já registrados.
+
 • Imprimir o nome do próximo cliente da fila.
+
 • Atender o próximo cliente da fila.
+
 • Listar os nomes dos clientes já atendidos.
+
 • Listar os telefones dos clientes ainda em espera.
 
 • Gerar relatório estatístico contendo:
+
 --Total de solicitações registradas, atendidas e em espera.
+
 --Distribuição percentual das solicitações por categoria
 
 ### Questão 3 - Biblioteca de Livros
@@ -57,16 +71,28 @@ do cadastro.
 O sistema deve manter um registro de todos os empréstimos realizados, associando leitores e livros com a
 data do empréstimo.
 
+
 Requisitos funcionais:
+
 • Cadastrar autores, livros e leitores.
+
 • Registrar empréstimos de livros para leitores, desde que:
+
 -- Haja pelo menos uma cópia disponível do livro.
+
 -- O leitor ainda não tenha esse livro emprestado.
+
 -- O leitor possua menos de 5 livros emprestados.
 
+
 • Listar dados da biblioteca, incluindo:
+
 -- Autores, em ordem alfabética.
+
 -- Leitores, em ordem alfabética e por id.
+
 -- Livros, ordenados por título, por autor e por ISBN.
+
 -- Empréstimos, por data.
+
 -- Empréstimos de um leitor específico, por data.
