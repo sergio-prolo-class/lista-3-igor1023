@@ -8,12 +8,12 @@ public class Usuario{
 
     public Usuario(String login, String senha){
 
-        this.login = formatarUsuario(login);
+        this.login = formatarLogin(login);
         this.senha = senha;
 
     }
 
-    private String formatarUsuario(String str){
+    private String formatarLogin(String str){
 
         return str.toLowerCase();
 
@@ -30,4 +30,5 @@ public class Usuario{
         return this.senha;
 
     }
+
 }

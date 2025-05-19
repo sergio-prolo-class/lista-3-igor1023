@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public class Gerenciador{
 
     // Atributos
-    static List<Usuario> usuarios = new ArrayList<Usuario>();
+    private static List<Usuario> usuarios = new ArrayList<Usuario>();
 
-    public static boolean adicionarUsuario(Usuario user){
+    public static boolean cadastrarUsuario(Usuario user){
 
         if(! usuarioExiste(user)){
 
@@ -17,7 +17,7 @@ public class Gerenciador{
 
         }
 
-        return false;
+        return false; // ja tem um login com este usuario cadastrado
 
     }
 
@@ -30,7 +30,7 @@ public class Gerenciador{
 
         }
 
-        return false;
+        return false; // usuario nao existe
 
     }
 
@@ -52,11 +52,26 @@ public class Gerenciador{
 
         for(Usuario usuario : usuarios){
 
-            if(usuario.getLogin().equals(user))
-                return false;
+            if(usuario.getLogin().equals(user.getLogin()))
+                return true;
 
         }
 
-        return true;
+        return false;
+    }
+
+    // Eu sei que ficou parecido com o usuarioExiste
+    // mas os métodos possuem funcoes diferentes.
+    public static Usuario getUsuario(String login){
+
+        for(Usuario usuario : usuarios){
+
+            if(usuario.getLogin().equals(login))
+                return usuario;
+
+        }
+
+        return null;
+
     }
 }
