@@ -4,10 +4,20 @@ public class Solicitacao{
 
     // Constantes
     private final String[] categorias = {"Suporte Técnico", "Informação", "Atendimento Financeiro"};
+    // usuario entrará com 1 para cadastrar uma solicitaca com categoria SUPORTE TECNICO
+    // no método, será tratado com N-1. É melhor para um usuario/funcionario utilizar 1, 2 e 3
+    // do que 0, 1 e 2
 
     // Atributos
-    String descricao;
-    String categoria;
+    private String descricao;
+    private String categoria;
+
+    public Solicitacao(){
+
+        this.descricao = "";
+        this.categoria = "";
+
+    }
 
     public void setDescricao(String descricao){
 

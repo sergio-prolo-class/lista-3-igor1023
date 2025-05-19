@@ -8,10 +8,24 @@ public class Atendimento{
     private final int TAMANHO_RELATORIO = 3;
 
     // Atributos
-    private Queue<Cliente> filaClientes = new LinkedList<Cliente>();    
-    private List<Cliente> clientesRegistrados = new LinkedList<Cliente>();
-    private List<Cliente> clientesJaAtendidos = new LinkedList<Cliente>();    
-    private int[] relatorio = new int[TAMANHO_RELATORIO];
+    private Queue<Cliente> filaClientes;    
+    private List<Cliente> clientesRegistrados;
+    private List<Cliente> clientesJaAtendidos;    
+    private int[] relatorio;  
+    /*
+     * relatorio[0] => armazena dados sobre total de solicitações registradas
+     * relatorio[1] => armazena dados sobre total de solicitações atendidas
+     * relatorio[2] => armazena dados sobre total de solicitações espera
+    */
+
+    public Atendimento(){
+
+        filaClientes = new LinkedList<Cliente>();    
+        clientesRegistrados = new LinkedList<Cliente>();
+        clientesJaAtendidos = new LinkedList<Cliente>();    
+        relatorio = new int[TAMANHO_RELATORIO]; 
+
+    }
 
     public void adicionarClienteNaFila(Cliente cliente){
 
@@ -31,12 +45,12 @@ public class Atendimento{
 
     public List<String> telefoneClientesRegistrados(){
 
-        List<String> telefone = new LinkedList<String>();
+        List<String> telefones = new LinkedList<String>();
 
         for(Cliente tel : this.clientesRegistrados)
-            telefone.add(tel.getTelefone());
+            telefones.add(tel.getTelefone());
 
-        return telefone;
+        return telefones;
     }
 
     public String nomeProximoCliente(){
@@ -78,5 +92,19 @@ public class Atendimento{
         }
 
         return telefoneClienteEspera;
+    }
+
+    // Como o relatorio está fixo a tres parametros, fiz passo a passo (nao fiz generico)
+    public String getRelatorio(){
+
+        String r = "Relatório:\n{ ";
+
+        r += "Registradas: " + this.relatorio[0] + "; ";
+        r += "Atendidas: " + this.relatorio[1] + "; ";
+        r += "Em espera: " + this.relatorio[2];
+        r += " }";
+
+        return r;
+
     }
 }

@@ -3,14 +3,15 @@ package ifsc_atendimento;
 public class Cliente{
 
     // Atributos
-    String nome;
-    String telefone;
-    Solicitacao solicitacao;
+    private String nome;
+    private String telefone;
+    private Solicitacao solicitacao;
 
     public Cliente(String nome, String telefone){
 
         this.nome = nome;
         this.telefone = nome;
+        this.solicitacao = new Solicitacao();
 
     }
 
