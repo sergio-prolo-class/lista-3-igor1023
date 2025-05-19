@@ -50,18 +50,14 @@ public class Gerenciador{
 
     private static boolean usuarioExiste(Usuario user){
 
-        for(Usuario usuario : usuarios){
-
-            if(usuario.getLogin().equals(user.getLogin()))
-                return true;
-
-        }
+        if(usuarios.contains(user))
+            return true;
 
         return false;
     }
 
-    // Eu sei que ficou parecido com o usuarioExiste
-    // mas os métodos possuem funcoes diferentes.
+    // vou buscar se existe um usuario com este login
+    // e retornarei o usuario
     public static Usuario getUsuario(String login){
 
         for(Usuario usuario : usuarios){
