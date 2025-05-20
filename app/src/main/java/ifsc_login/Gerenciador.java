@@ -7,6 +7,7 @@ public class Gerenciador{
 
     // Atributos
     private static List<Usuario> usuarios = new ArrayList<Usuario>();
+    private static List<Usuario> usuariosAutenticados = new ArrayList<Usuario>();
 
     public static boolean cadastrarUsuario(Usuario user){
 
@@ -19,6 +20,25 @@ public class Gerenciador{
 
         return false; // ja tem um login com este usuario cadastrado
 
+    }
+
+    public static void autenticarUsuario(String login, String senha){
+
+        // Vou obter o Usuario que tenha um login igual a String login de entrada
+        // lembrando que getUsuario retorna o usuario ou NULL
+        Usuario user = getUsuario(login.toLowerCase());
+
+        if(user != null && user.getSenha().equals(senha))
+            usuariosAutenticados.add(user);
+
+    }
+
+    public static boolean estaAutenticado(String login, String senha){
+
+        // lembrando que getUsuario retorna o usuario ou NULL
+        Usuario user = getUsuario(login.toLowerCase());
+
+        return user != null && user.getSenha().equals(senha);
     }
 
     public static boolean removerUsuario(Usuario user){
@@ -48,12 +68,16 @@ public class Gerenciador{
 
     }
 
+    public static List<Usuario> obtemUsuariosCadastrados(){
+
+        return usuariosAutenticados;
+
+    }
+
     private static boolean usuarioExiste(Usuario user){
 
-        if(usuarios.contains(user))
-            return true;
+        return usuarios.contains(user);
 
-        return false;
     }
 
     // vou buscar se existe um usuario com este login

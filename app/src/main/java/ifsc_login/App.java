@@ -41,6 +41,19 @@ public class App{
         // vou remover um usuario
         removerUsuario("tiago_ifsc");
         imprimirLogins();
+
+        // Como tiago_ifsc foi removido, deve cair no ELSE
+        Gerenciador.autenticarUsuario("tiago_ifsc", "123456#$");
+        if(Gerenciador.estaAutenticado("tiago_ifsc", "123456#$"))
+            System.out.println("Está autenticado");
+        else System.out.println("Não está autenticado");
     
+        System.out.println("Vamos autentica o usuario igor_ifsc:");
+
+        Gerenciador.autenticarUsuario("igor_ifsc", "123456@#$");
+        if(Gerenciador.estaAutenticado("igor_ifsc", "123456@#$"))
+            System.out.println("Está autenticado");
+        else System.out.println("Não está autenticado");
+
     }
 }

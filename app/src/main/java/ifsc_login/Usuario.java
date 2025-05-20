@@ -3,8 +3,11 @@ package ifsc_login;
 public class Usuario{
 
     // Atributos
-    private String login;
-    private String senha;
+    // O compilador sugeriu utilizar os atributos como final
+    // Faz sentido, uma vez que estes atributos são criados 
+    // no método construtor e não serão alterados.
+    private final String login;
+    private final String senha;
 
     public Usuario(String login, String senha){
 
