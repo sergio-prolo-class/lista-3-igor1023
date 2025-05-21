@@ -7,7 +7,7 @@ public class App{
 
     public static void main(String[] args){
 
-        System.err.println("\n===== TESTANDO A BIBLIOTECA =====\n");
+        System.out.println("\n===== TESTANDO A BIBLIOTECA =====\n");
 
         Biblioteca biblioteca = new Biblioteca();
 
