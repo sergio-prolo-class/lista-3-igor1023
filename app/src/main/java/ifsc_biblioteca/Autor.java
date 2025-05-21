@@ -1,5 +1,6 @@
 package ifsc_biblioteca;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Autor{
@@ -7,7 +8,7 @@ public class Autor{
     // Atributos
     private String nome;
     private String idioma;
-    private Set<Livro> livros;
+    private Set<Livro> livros = new HashSet<Livro>();
 
     public Autor(String nome, String idioma, Set<Livro> livros){
 
@@ -43,14 +44,13 @@ public class Autor{
 
     public String getLivrosToString(){
 
-        String str = "";
+        String str = "Livros {";
 
-        for(Livro l : this.livros){
-
+        for(Livro l : this.livros)
             str += l.getTitulo() + "; ";
 
-        }
-
+        str += " }";
+        
         return str;
 
     }

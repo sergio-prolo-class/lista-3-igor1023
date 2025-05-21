@@ -69,7 +69,7 @@ public class Biblioteca{
     // https://www.youtube.com/watch?v=wViUmn3YFoE
     public String listarAutoresOrdemAlfabetica(){
 
-        String autores = "{ ";
+        String autores = "Autores { ";
         List<String> autoresNomes = new ArrayList<String>();
 
 
@@ -91,7 +91,7 @@ public class Biblioteca{
 
     public String listarLeitoresPorNome(){
 
-        String leitores = "{ ";
+        String leitores = "Leitores { ";
         List<String> leitoresNomes = new ArrayList<String>();
 
         for(Leitor leitor : this.leitores)
@@ -109,7 +109,7 @@ public class Biblioteca{
 
     public String listarLeitoresPorId(){
 
-        String ids = "{ ";
+        String ids = "IDs { ";
 
         List<String> idsLeitores = new ArrayList<String>();
 
@@ -129,7 +129,7 @@ public class Biblioteca{
 
     public String listarLivrosPorTitulo(){
 
-        String livros = "{ ";
+        String livros = "Livros { ";
 
         List<String> livrosNomes = new ArrayList<String>();
 
@@ -146,13 +146,13 @@ public class Biblioteca{
 
     }
 
-    public void listarLivrosPorAutor(){
-
+    public String listarLivrosPorAutor(){
+        return ""; // A fazer
     }
 
     public String listarLivrosPorCodigo(){
 
-        String codigos = "{ ";
+        String codigos = "Livros por Código { ";
 
         List<String> livrosCodigos = new ArrayList<String>();
 
