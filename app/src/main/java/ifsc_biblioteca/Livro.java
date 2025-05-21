@@ -101,7 +101,9 @@ public class Livro{
     }
 
     public void devolver(){
-
+        // Implementar um algoritmo para devolver somente
+        // se tiver o livro foi emprestado
+        
         this.copiasDisponiveis++;
 
     }

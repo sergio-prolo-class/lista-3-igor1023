@@ -96,3 +96,15 @@ Requisitos funcionais:
 -- Empréstimos, por data.
 
 -- Empréstimos de um leitor específico, por data.
+
+## Lista 3: Diagramas de classes UML
+Seção dedicada para os diragramas de classes UML da lista 3.
+
+### Questão 1: Login
+![Diagrama UML do Login](images/diagrama_questao1.png)
+
+### Questão 2: Atendimento
+![Diagrama UML do Atendimento](images/diagrama_questao2.png)
+
+### Questão 3: Atendimento
+![Diagrama UML do ](images/diagrama_questao3.png)
