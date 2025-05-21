@@ -42,17 +42,23 @@ public class Biblioteca{
 
     public boolean cadastrarEmprestimo(Livro livro, Leitor leitor, String data){
 
-        if(! livro.existeCopiaParaEmprestimo())
+        if(! livro.existeCopiaParaEmprestimo() || ! leitor.podeEmprestar())
             return false;
 
-        if(! leitor.podeEmprestar())
-            return false;
+        for (Emprestimo e : emprestimos) {
+
+            if (e.getLeitor().equals(leitor) && e.getLivro().equals(livro)) 
+                return false; // Leitor já possui esse livro emprestado
+
+        }
 
         if(livro.emprestar()) {
+
             leitor.incrementarEmprestimos();
             Emprestimo emp = new Emprestimo(livro, leitor, data);
             this.emprestimos.add(emp);
             return true;
+
         }
         
         return true;
@@ -67,15 +73,13 @@ public class Biblioteca{
         List<String> autoresNomes = new ArrayList<String>();
 
 
-        for(Autor autor : this.autores){
+        for(Autor autor : this.autores)
             autoresNomes.add(autor.getNome());
-        }
 
         Collections.sort(autoresNomes);
 
-        for(String str : autoresNomes){
+        for(String str : autoresNomes)
             autores += str + "; ";
-        }
 
         autores += " }";
 
@@ -90,15 +94,13 @@ public class Biblioteca{
         String leitores = "{ ";
         List<String> leitoresNomes = new ArrayList<String>();
 
-        for(Leitor leitor : this.leitores){
+        for(Leitor leitor : this.leitores)
             leitoresNomes.add(leitor.getNome());
-        }
 
         Collections.sort(leitoresNomes);
 
-        for(String str : leitoresNomes){
+        for(String str : leitoresNomes)
             leitores += str + "; ";
-        }
 
         leitores += "}";
         return leitores;
@@ -111,15 +113,14 @@ public class Biblioteca{
 
         List<String> idsLeitores = new ArrayList<String>();
 
-        for(Leitor leitorId : this.leitores){
+        for(Leitor leitorId : this.leitores)
             idsLeitores.add(leitorId.getId());
-        }
 
         Collections.sort(idsLeitores);
 
-        for(String str : idsLeitores){
+        for(String str : idsLeitores)
             ids += str + "; ";
-        }
+        
 
         ids += " }";
         return ids;
@@ -132,15 +133,13 @@ public class Biblioteca{
 
         List<String> livrosNomes = new ArrayList<String>();
 
-        for(Livro livro : this.livros){
+        for(Livro livro : this.livros)
             livrosNomes.add(livro.getTitulo());
-        }
 
         Collections.sort(livrosNomes);
 
-        for(String str : livrosNomes){
+        for(String str : livrosNomes)
             livros += str + "; ";
-        }
 
         livros += " }";
         return livros;
@@ -151,21 +150,19 @@ public class Biblioteca{
 
     }
 
-    public void listarLivrosPorCodigo(){
+    public String listarLivrosPorCodigo(){
 
         String codigos = "{ ";
 
         List<String> livrosCodigos = new ArrayList<String>();
 
-        for(Livro livro : this.livros){
+        for(Livro livro : this.livros)
             livrosCodigos.add(livro.getCodigo());
-        }
 
         Collections.sort(livrosCodigos);
 
-        for(String str : livrosCodigos){
+        for(String str : livrosCodigos)
             codigos += str + "; ";
-        }
 
         codigos += " }";
         return codigos;
@@ -173,12 +170,12 @@ public class Biblioteca{
 
     }
 
-    public void listarEmprestimosPorData(){
-
+    public String listarEmprestimosPorData(){
+        return ""; // a fazer
     }
 
-    public void listarEmprestimosPorLeitor(Leitor leitor){
-
+    public String listarEmprestimosPorLeitor(Leitor leitor){
+        return ""; // a fazer
     }
 
 }
