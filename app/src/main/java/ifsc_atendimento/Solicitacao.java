@@ -12,14 +12,14 @@ public class Solicitacao{
     private String descricao;
     private String categoria;
 
-    public Solicitacao(){
+    public Solicitacao(String descricao, int categoria){
 
-        this.descricao = "";
-        this.categoria = "";
+        setDescricao(descricao);
+        setCategoria(categoria);
 
     }
 
-    public void setDescricao(String descricao){
+    private void setDescricao(String descricao){
 
         this.descricao = descricao;
 
@@ -31,7 +31,7 @@ public class Solicitacao{
 
     }
 
-    public boolean setCategoria(int num){
+    private boolean setCategoria(int num){
 
         if(num < 1 || num > 3)
             return false;

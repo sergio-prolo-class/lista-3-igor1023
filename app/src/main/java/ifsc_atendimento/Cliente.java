@@ -1,24 +1,28 @@
 package ifsc_atendimento;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cliente{
 
     // Atributos
     private String nome;
     private String telefone;
-    private Solicitacao solicitacao;
+    private List<Solicitacao> solicitacoes;
 
     public Cliente(String nome, String telefone){
 
         this.nome = nome;
-        this.telefone = nome;
-        this.solicitacao = new Solicitacao();
+        this.telefone = telefone;
+        this.solicitacoes = new ArrayList<Solicitacao>();
 
     }
 
     public void setSolicitacao(String descricao, int categoria){
 
-        this.solicitacao.setDescricao(descricao);
-        this.solicitacao.setCategoria(categoria);
+        Solicitacao s = new Solicitacao(descricao, categoria);
+        
+        solicitacoes.add(s);
 
     }
 
@@ -31,6 +35,12 @@ public class Cliente{
     public String getTelefone(){
 
         return this.telefone;
+
+    }
+
+    public List<Solicitacao> getSolicitacoes(){
+
+        return this.solicitacoes;
 
     }
 }

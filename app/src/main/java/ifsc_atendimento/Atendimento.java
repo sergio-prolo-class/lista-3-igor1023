@@ -55,15 +55,21 @@ public class Atendimento{
 
     public String nomeProximoCliente(){
 
-        return filaClientes.peek().getNome();
+        String nome = filaClientes.peek().getNome();
 
+        return nome == null ? "Sem cliente na fila" : nome;
     }
 
     public String atenderProximoCliente(){
 
+        // obtenho e depois removo o cliente da fila
+        Cliente cliente = filaClientes.remove();
         this.relatorio[1]++; // incremento solicitacoes atendidas
         this.relatorio[2]--; // diminuo solicitacoes em espera
-        return filaClientes.remove().getNome();
+        clientesJaAtendidos.add(cliente);
+
+        // retorno o nome do cliente que foi removido
+        return cliente.getNome();
 
     }
 
@@ -71,11 +77,8 @@ public class Atendimento{
 
         List<String> clientesAtendidos = new LinkedList<String>();
 
-        for(Cliente cli : clientesJaAtendidos){
-
+        for(Cliente cli : clientesJaAtendidos)
             clientesAtendidos.add(cli.getNome());
-
-        }
 
         return clientesAtendidos;
 
@@ -85,11 +88,8 @@ public class Atendimento{
 
         List<String> telefoneClienteEspera = new LinkedList<String>();
 
-        for(Cliente cli : filaClientes){
-
+        for(Cliente cli : filaClientes)
             telefoneClienteEspera.add(cli.getTelefone());
-
-        }
 
         return telefoneClienteEspera;
     }
