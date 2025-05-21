@@ -30,6 +30,8 @@ public class App{
 
     public static void main(String[] args){
 
+        System.out.println("\n===== TESTANDO O LOGIN =====\n");
+
         // vou criar alguns usuarios e cadastrá-los
         criarUsuarios();
 
