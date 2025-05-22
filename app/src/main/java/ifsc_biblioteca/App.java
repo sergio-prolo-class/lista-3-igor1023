@@ -26,7 +26,7 @@ public class App{
         autores2.add(autor2);
 
         Livro livro1 = new Livro("Dom Casmurro", autores1, 1);
-        Livro livro2 = new Livro("1984", autores2, 6);
+        Livro livro2 = new Livro("Linguagem JAVA", autores2, 6);
 
         biblioteca.cadastrarLivro(livro1);
         biblioteca.cadastrarLivro(livro2);
@@ -36,7 +36,7 @@ public class App{
         autor2.adicionarLivro(livro2);
 
         // Criar leitor
-        Leitor leitor1 = new Leitor("João", "Paçhoça");
+        Leitor leitor1 = new Leitor("João", "Palhoça");
         Leitor leitor2 = new Leitor("Maria", "São José", "48912345678");
 
         biblioteca.cadastrarLeitor(leitor1);

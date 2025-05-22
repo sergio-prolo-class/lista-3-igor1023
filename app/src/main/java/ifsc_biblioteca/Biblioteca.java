@@ -81,9 +81,12 @@ public class Biblioteca{
         for(String str : autoresNomes)
             autores += str + "; ";
 
-        autores += " }";
+        autores += "}";
 
-        return autores;
+        StringBuilder str = new StringBuilder(autores);
+        str.deleteCharAt(autores.length() - 3);
+
+        return str.toString();
     }
 
     // mesma ideia dos autores em ordem alfabetica foi
@@ -103,7 +106,11 @@ public class Biblioteca{
             leitores += str + "; ";
 
         leitores += "}";
-        return leitores;
+
+        StringBuilder str = new StringBuilder(leitores);
+        str.deleteCharAt(leitores.length() - 3);
+
+        return str.toString();
 
     }
 
@@ -122,8 +129,12 @@ public class Biblioteca{
             ids += str + "; ";
         
 
-        ids += " }";
-        return ids;
+        ids += "}";
+        
+        StringBuilder str = new StringBuilder(ids);
+        str.deleteCharAt(ids.length() - 3);
+
+        return str.toString();
 
     }
 
@@ -141,8 +152,12 @@ public class Biblioteca{
         for(String str : livrosNomes)
             livros += str + "; ";
 
-        livros += " }";
-        return livros;
+        livros += "}";
+
+        StringBuilder str = new StringBuilder(livros);
+        str.deleteCharAt(livros.length() - 3);
+
+        return str.toString();
 
     }
 
@@ -150,6 +165,12 @@ public class Biblioteca{
         return ""; // A fazer
     }
 
+    // encontrei um método para remover um caractere
+    // espefico: utilizar um objeto da classe StringBuilder,
+    // utilizar o método deleteCharAt, depois retornar
+    // o objeto+método toString. 
+    // Utilizei isto para remover o ';' que ficava ao final
+    // da impressão das listagens. Funcionou.
     public String listarLivrosPorCodigo(){
 
         String codigos = "Livros por Código { ";
@@ -164,9 +185,12 @@ public class Biblioteca{
         for(String str : livrosCodigos)
             codigos += str + "; ";
 
-        codigos += " }";
-        return codigos;
+        codigos += "}";
 
+        StringBuilder str = new StringBuilder(codigos);
+        str.deleteCharAt(codigos.length() - 3);
+
+        return str.toString();
 
     }
 
