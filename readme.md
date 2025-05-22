@@ -106,5 +106,5 @@ Seção dedicada para os diragramas de classes UML da lista 3.
 ### Questão 2: Atendimento
 ![Diagrama UML do Atendimento](images/diagrama_questao2.png)
 
-### Questão 3: Atendimento
+### Questão 3: Biblioteca
 ![Diagrama UML do ](images/diagrama_questao3.png)
